@@ -8,8 +8,6 @@
 #
 #
 
-from random import randint
-
 from termcolor import cprint
 
 
@@ -24,7 +22,7 @@ class Family:
     def __str__(self):
         return 'Я - {}, сыт на  {}, физическая форма на {} '.format(
             self.name, self.fullness, self.train)
-
+# поход в магазин
     def shopping(self):
         if self.house.food <= 20:
             cprint('{} сходил в магазин за едой'.format(self.name), color='magenta')
@@ -59,7 +57,7 @@ class Family:
         self.fullness -= 10
 
 
-    # каждый ходит на конкретно свою работу(разработчик, айчар)
+    # каждый ходит на конкретно свою работу(разработчик, айчар). придумать как сделать.
 
     def work(self):
         cprint('{} сходил на работу'.format(self.name), color='blue')
@@ -84,7 +82,7 @@ class Family:
         self.fullness -= 10
         cprint('{} Вьехал в дом'.format(self.name), color='cyan')
 
-    # переработать логику действий.
+    #ежедневная активность.
     def act(self):
         if self.train <= 10:
             cprint('{} пора заняться собой...'.format(self.name), color='red')
@@ -121,15 +119,13 @@ residents = [
     Family(name='Kat'),
 ]
 
-# изменить цель. тут должен быть заезд на съеммную квартиру.
+# заезд на съемную квартиру
 rent_house = House()
 for citisen in residents:
     citisen.go_to_the_house(house=rent_house)
-
-#решить проблему "накопления" дней + накопления денег
-# счетчик циклов?
+# отсчет пройденных дней до цели(покупки квартиры)
 day = 1
-while rent_house.money <= 1500000:
+while rent_house.money <= 400000:
 
     print('==============начался новый день №', day, '===================')
     day += 1
