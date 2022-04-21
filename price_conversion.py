@@ -34,3 +34,4 @@ for goods in goods.items():
 print(goods_2)
 print(goods_3)
 
+
