@@ -4,7 +4,7 @@
 #
 
 d_1 = 2    #курс у.е на момент покупки товара
-d_2 = 2  #курс у.е. на данный момент. (!!!! далее нужно будет найти способ запарсить его)
+d_2 = float(input('введите курс доллара'))  #курс у.е. на данный момент. (!!!! далее нужно будет найти способ запарсить его)
 nds = 0.10 #ставка ндс 10%
 prfibility = 0.15 # % заложенной рентабельности
 
@@ -33,18 +33,19 @@ for goods in goods.items():
                          'profibility': goods[1]*d_2 * prfibility,
                          'total price': goods[1]*d_2 + (goods[1]*d_1 * prfibility) + (goods[1]*d_1 * nds)}
                     })
-print(goods_2)
-print(goods_3)
+#проверка содежимого словрей
+# print(goods_2)
+# print(goods_3)
 
 # !!!как подступиться без ключа?!
 price1 = goods_2['nuts']['total price']
 pur1 = goods_3['nuts']['purchase']
 nds1 = goods_2['nuts']['nds']
-print(price1, pur1, nds1)
+# print(price1, pur1, nds1)
 
 x = price1 - nds1 - pur1
 
-print(x)
+# print(x)
 
 if x >= 0:
     for goods_2 in goods_2.items():
@@ -54,9 +55,4 @@ else:
     for goods_3 in goods_3.items():
         print('Товар:', goods_3[0], 'Имеет цену:', goods_3[1]['total price'])
 
-#проверка
-# rise = 0
-# while x >= 0:
-#     d_2 += 0.10
-#     rise += 1
-#     print(rise)
+
