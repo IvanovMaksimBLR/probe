@@ -10,7 +10,7 @@ class Shop:
 
 class Man:
     def __init__(self):
-        self.name = 'joe'
+        # self.name = 'joe'
         self.milk = 0
         self.bread = 0
         self.tea = 0
