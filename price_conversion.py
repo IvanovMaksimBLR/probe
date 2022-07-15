@@ -33,7 +33,7 @@ for goods in goods.items():
                          'profibility': goods[1]*d_2 * prfibility,
                          'total price': goods[1]*d_2 + (goods[1]*d_1 * prfibility) + (goods[1]*d_1 * nds)}
                     })
-#проверка содежимого словрей
+ #проверка содежимого словрей
 # print(goods_2)
 # print(goods_3)
 
